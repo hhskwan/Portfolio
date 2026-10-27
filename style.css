@@ -154,6 +154,10 @@ footer {
     color: #6b7280;
 }
 
+.menu-toggle, .menu-button {
+    display: none;
+}
+
 /* Mobile layout */
 @media (max-width: 700px) {
     .site-header {
@@ -161,8 +165,34 @@ footer {
         flex-direction: column;
     }
 
+    /* Display menu */
+    .menu-button {
+        display: block;
+        padding: 6px 12px;
+        background-color: #2563eb;
+        color: white;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        cursor: pointer;
+    }
+    
+    /* toggle menu */
+    .menu-toggle {
+        display: none;
+    }
+
     nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
         gap: 12px;
+        padding-top: 16px;
+        margin-top: 12px;
+        border-top: 1px solid #e5e7eb;
+    }
+
+    .menu-toggle:checked ~ nav {
+        display: flex;
     }
 
     .hero {
